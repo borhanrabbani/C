@@ -1,0 +1,16 @@
+#include <ctype.h>
+#include <stdio.h>
+
+int main(){
+    char ch;
+    printf(". to exit:");
+    for(;;){
+        ch=getc(stdin);
+        if(ch=='.')
+            break;
+        if(isalnum(ch)){
+            printf("%c is alphanumeric\n", ch);
+        }
+    }
+    return 0;
+}
