@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+struct info {
+    int num;
+    char name[20];
+};
+
+int main(){
+    int i,j,n;
+    struct info sarr[50];
+    printf("How Many Student?: ");
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        printf("Enter ID of student No. %d: ",i);
+        scanf("%d",&sarr[i].num);
+        fflush(stdin);
+        printf("Enter Name of Student No. %d: ",i);
+        gets(sarr[i].name);
+    }
+
+    printf("\n----\nStudent Names\n");
+    char temp[20];
+    for(i=0;i<n;i++){
+        strcpy(temp,sarr[i].name);
+
+        for(j=strlen(temp)-1;j>=0;j--){
+            printf("%c",sarr[i].name[j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
